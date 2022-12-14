@@ -2,7 +2,7 @@
   "version": "2.0.0",
   "fields": [
     {
-      "field": "API_KEY",
+      "field": "API_TOKEN_OR_KEY",
       "displayName": "Duo API Key",
       "type": "String",
       "minLength": 6,
@@ -13,7 +13,7 @@
       "helpSection": "Login to your Freshservice account \n Go to Dashboard -> Edit Profile \n To the right side, you should see the API key associated with your user account"
     },
     {
-      "field": "DOMAIN_NAME",
+      "field": "DuoSecurityURL",
       "displayName": "Duo Domain Name",
       "type": "String",
       "minLength": 4,
