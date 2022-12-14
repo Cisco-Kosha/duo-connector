@@ -10,7 +10,6 @@ import (
 	neturl "net/url"
 	"strconv"
 
-	"github.com/kosha/freshservice-connector/pkg/models"
 )
 
 func basicAuth(username, password string) string {
