@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"io/ioutil"
 	"net/http"
+	"encoding/base64"
 )
 
 func basicAuth(username, password string) string {
@@ -27,7 +28,7 @@ func makeHttpReq(apiKey string, req *http.Request) []byte {
 
 	return bodyBytes
 }
-func GetRequest(url string, apiKey string, params url.Values) (string, error) {
+func GetRequest(url string, apiKey string) (string, error) {
 	req, err := http.NewRequest("GET", url, nil)
 	req.Header.Set("Content-Type", "application/json")
 	if err != nil {

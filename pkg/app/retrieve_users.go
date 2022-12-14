@@ -21,6 +21,6 @@ func (a *App) getBases(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Access-Control-Allow-Headers", "*")
 	w.Header().Set("Access-Control-Allow-Methods", "*")
 	generate_url := a.Cfg.GetDuoSecurityURL + "/admin/v1/users"
-	bases := httpclient.GetRequest(generate_url, a.Cfg.GetPersonalAccessToken(),  r.URL.Query())
+	bases := httpclient.GetRequest(generate_url, a.Cfg.GetPersonalAccessToken())
 	respondWithJSON(w, http.StatusOK, bases)
 }
