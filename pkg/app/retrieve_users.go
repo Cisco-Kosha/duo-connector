@@ -17,7 +17,7 @@ import (
 // @Failure      403  {object}  string "permission denied"
 // @Failure      404  {object}  string "not found"
 // @Failure      500  {object}  string "internal server error"
-// @Router /api/v2/admin/v1/users [get]
+// @Router /api/v1/admin/v1/users [get]
 func (a *App) getUsers(w http.ResponseWriter, r *http.Request) {
 	//Allow CORS here By * or specific origin
 	w.Header().Set("Access-Control-Allow-Origin", "*")
@@ -31,3 +31,12 @@ func (a *App) getUsers(w http.ResponseWriter, r *http.Request) {
 	}
 	respondWithJSON(w, http.StatusOK, data)
 }
+
+// To generate swagger.json and swagger.yaml files based on the API documentation, simple run -
+
+// go install github.com/swaggo/swag/cmd/swag@latest
+// swag init -g main.go --parseDependency --parseInternal
+// To generate OpenAPISpec version 3 from Swagger 2.0 specification, run -
+
+// npm i api-spec-converter
+// npx api-spec-converter --from=swagger_2 --to=openapi_3 --syntax=json ./docs/swagger.json > openapi.json

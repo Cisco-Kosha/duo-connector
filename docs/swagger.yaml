@@ -10,7 +10,7 @@ info:
   title: Freshservice Connector API
   version: "2.0"
 paths:
-  /api/v2/admin/v1/users:
+  /api/v1/admin/v1/users:
     get:
       consumes:
       - application/json
@@ -41,7 +41,7 @@ paths:
       summary: Get Returns a paged list of users
       tags:
       - specification
-  /api/v2/specification/list:
+  /api/v1/specification/list:
     get:
       consumes:
       - application/json

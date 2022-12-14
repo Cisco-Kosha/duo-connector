@@ -13,7 +13,7 @@
     "host": "localhost:8012",
     "basePath": "/",
     "paths": {
-        "/api/v2/admin/v1/users": {
+        "/api/v1/admin/v1/users": {
             "get": {
                 "description": "all the users",
                 "consumes": [
@@ -60,7 +60,7 @@
                 }
             }
         },
-        "/api/v2/specification/list": {
+        "/api/v1/specification/list": {
             "get": {
                 "description": "Get all environment variables that need to be supplied",
                 "consumes": [

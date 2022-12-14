@@ -20,7 +20,7 @@ const docTemplate = `{
     "host": "{{.Host}}",
     "basePath": "{{.BasePath}}",
     "paths": {
-        "/api/v2/admin/v1/users": {
+        "/api/v1/admin/v1/users": {
             "get": {
                 "description": "all the users",
                 "consumes": [
@@ -67,7 +67,7 @@ const docTemplate = `{
                 }
             }
         },
-        "/api/v2/specification/list": {
+        "/api/v1/specification/list": {
             "get": {
                 "description": "Get all environment variables that need to be supplied",
                 "consumes": [
