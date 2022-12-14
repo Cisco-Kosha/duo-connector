@@ -2,9 +2,7 @@ package app
 
 import (
 	"encoding/json"
-	"errors"
 	"net/http"
-	"strconv"
 )
 
 func respondWithError(w http.ResponseWriter, code int, message string) {

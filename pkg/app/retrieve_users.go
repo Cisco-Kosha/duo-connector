@@ -1,10 +1,9 @@
 package app
 
-
 import (
-	"github.com/gorilla/mux"
-	"github.com/kosha/duo-connector/pkg/httpclient"
 	"net/http"
+
+	"github.com/kosha/duo-connector/pkg/httpclient"
 )
 
 // getRetreive Users godoc
@@ -15,12 +14,16 @@ import (
 // @Produce  json
 // @Success 200
 // @Router /admin/v1/users [get]
-func (a *App) getBases(w http.ResponseWriter, r *http.Request) {
+func (a *App) getUsers(w http.ResponseWriter, r *http.Request) {
 	//Allow CORS here By * or specific origin
 	w.Header().Set("Access-Control-Allow-Origin", "*")
 	w.Header().Set("Access-Control-Allow-Headers", "*")
 	w.Header().Set("Access-Control-Allow-Methods", "*")
-	generate_url := a.Cfg.GetDuoSecurityURL + "/admin/v1/users"
-	bases := httpclient.GetRequest(generate_url, a.Cfg.GetPersonalAccessToken())
-	respondWithJSON(w, http.StatusOK, bases)
+	generate_url := a.Cfg.GetDuoSecurityURL() + "/admin/v1/users"
+	data, err := httpclient.GetRequest(generate_url, a.Cfg.GetPersonalAccessToken())
+	if err != nil {
+		a.Log.Errorf("Error in Duo API call getUsers", err)
+		respondWithError(w, http.StatusBadRequest, err.Error())
+	}
+	respondWithJSON(w, http.StatusOK, data)
 }

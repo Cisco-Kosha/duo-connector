@@ -1,8 +1,6 @@
 package app
 
 import (
-	"encoding/json"
-	"github.com/kosha/duo-connector/pkg/httpclient"
 	"net/http"
 )
 

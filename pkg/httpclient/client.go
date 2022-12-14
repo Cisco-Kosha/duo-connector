@@ -2,10 +2,10 @@ package httpclient
 
 import (
 	"bytes"
+	"encoding/base64"
 	"fmt"
 	"io/ioutil"
 	"net/http"
-	"encoding/base64"
 )
 
 func basicAuth(username, password string) string {
