@@ -10,19 +10,37 @@ info:
   title: Freshservice Connector API
   version: "2.0"
 paths:
-  /admin/v1/users:
+  /api/v2/admin/v1/users:
     get:
       consumes:
       - application/json
-      description: Retrieve Users
+      description: all the users
       produces:
       - application/json
       responses:
         "200":
           description: OK
+          schema:
+            type: object
+        "400":
+          description: bad request
+          schema:
+            type: string
+        "403":
+          description: permission denied
+          schema:
+            type: string
+        "404":
+          description: not found
+          schema:
+            type: string
+        "500":
+          description: internal server error
+          schema:
+            type: string
       summary: Get Returns a paged list of users
       tags:
-      - Users
+      - specification
   /api/v2/specification/list:
     get:
       consumes:
