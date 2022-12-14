@@ -3,7 +3,7 @@ package app
 
 import (
 	"github.com/gorilla/mux"
-	"github.com/kosha/freshservice-connector/pkg/httpclient"
+	"github.com/kosha/duo-connector/pkg/httpclient"
 	"net/http"
 )
 
