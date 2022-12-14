@@ -23,5 +23,5 @@ func (c *Config) GetPersonalAccessToken() string {
 }
 
 func (c *Config) GetDuoSecurityURL() string {
-	return c.domainName
+	return c.duoSecurityURL
 }

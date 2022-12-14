@@ -2,14 +2,9 @@ package httpclient
 
 import (
 	"bytes"
-	"encoding/base64"
-	"encoding/json"
 	"fmt"
 	"io/ioutil"
 	"net/http"
-	neturl "net/url"
-	"strconv"
-
 )
 
 func basicAuth(username, password string) string {
@@ -33,7 +28,7 @@ func makeHttpReq(apiKey string, req *http.Request) []byte {
 	return bodyBytes
 }
 func GetRequest(url string, apiKey string, params url.Values) (string, error) {
-	req, err := http.NewRequest("GET", url)
+	req, err := http.NewRequest("GET", url, nil)
 	req.Header.Set("Content-Type", "application/json")
 	if err != nil {
 		return "", err
