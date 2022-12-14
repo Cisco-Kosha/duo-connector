@@ -12,11 +12,7 @@ import (
 // @Tags specification
 // @Accept  json
 // @Produce  json
-// @Success 200 {object} object
-// @Failure      400  {object} string "bad request"
-// @Failure      403  {object}  string "permission denied"
-// @Failure      404  {object}  string "not found"
-// @Failure      500  {object}  string "internal server error"
+// @Success 200
 // @Router /api/v1/admin/v1/users [get]
 func (a *App) getUsers(w http.ResponseWriter, r *http.Request) {
 	//Allow CORS here By * or specific origin
