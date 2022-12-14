@@ -10,13 +10,13 @@ import (
 	"github.com/prometheus/client_golang/prometheus/promauto"
 	"github.com/prometheus/client_golang/prometheus/promhttp"
 
-	_ "github.com/kosha/freshservice-connector/docs"
-	"github.com/kosha/freshservice-connector/pkg/app"
-	"github.com/kosha/freshservice-connector/pkg/logger"
+	_ "github.com/kosha/duo-connector/docs"
+	"github.com/kosha/duo-connector/pkg/app"
+	"github.com/kosha/duo-connector/pkg/logger"
 )
 
 var (
-	log  = logger.New("app", "freshservice-connector")
+	log  = logger.New("app", "duo-connector")
 	port = 8012
 )
 
@@ -95,7 +95,7 @@ func main() {
 
 	// Prometheus metrics endpoint
 	a.Router.Path("/metrics").Handler(promhttp.Handler())
-	log.Infof("Running freshservice-connector on port %d", port)
+	log.Infof("Running duo-connector on port %d", port)
 	a.Run(fmt.Sprintf(":%d", port))
 
 }
