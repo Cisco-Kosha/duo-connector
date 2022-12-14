@@ -19,9 +19,9 @@
       "minLength": 4,
       "maxLength": 60,
       "required": true,
-      "description": "Company name registered with freshservice account",
+      "description": "Company name registered with duo security account",
       "example": "acmecorp",
-      "helpSection": "Enter the comapny name that you provided when you signed up to Freshservice \n If your Freshservice account URL is: acmecorp.freshservice.com then your domain name is acmecorp"
+      "helpSection": "Enter the comapny name that you provided when you signed up to Freshservice \n If your duosecurity account URL is: acmecorp.<service_name>.com then your domain name is acmecorp"
     }
   ]
 }
